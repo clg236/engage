@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://styles/button_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://styles/button_normal.tres" type="StyleBox" id=2]
+[ext_resource path="res://styles/button_hover.tres" type="StyleBox" id=3]
+[ext_resource path="res://styles/button_pressed.tres" type="StyleBox" id=4]
+[ext_resource path="res://scenes/hand raise.gd" type="Script" id=5]
+
+[node name="hand" type="Button"]
+margin_right = 221.0
+margin_bottom = 58.0
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 2 )
+toggle_mode = true
+text = "CHRISTIAN G."
+script = ExtResource( 5 )

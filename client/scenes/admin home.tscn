@@ -1,0 +1,180 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/admin.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://scenes/TabContainer.gd" type="Script" id=3]
+[ext_resource path="res://art/user.png" type="Texture" id=4]
+[ext_resource path="res://fonts/m5x7.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://styles/button_font.tres" type="DynamicFont" id=6]
+[ext_resource path="res://styles/body_font.tres" type="DynamicFont" id=7]
+[ext_resource path="res://styles/title_font.tres" type="DynamicFont" id=8]
+[ext_resource path="res://styles/panel.tres" type="StyleBox" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+font_data = ExtResource( 5 )
+
+[node name="admin home" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 25
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 695.0
+margin_bottom = 1255.0
+custom_styles/panel = ExtResource( 9 )
+
+[node name="admin view" type="MarginContainer" parent="MarginContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/admin view"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 645.0
+margin_bottom = 1205.0
+size_flags_vertical = 3
+custom_constants/separation = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/admin view/VBoxContainer"]
+margin_right = 620.0
+margin_bottom = 100.0
+
+[node name="logout" type="TextureRect" parent="MarginContainer/Panel/admin view/VBoxContainer/HBoxContainer"]
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/admin view/VBoxContainer/HBoxContainer"]
+margin_left = 104.0
+margin_right = 516.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+
+[node name="class name" type="Label" parent="MarginContainer/Panel/admin view/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 412.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 1 )
+text = "UB-TECH 1"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/admin view/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 60.0
+margin_right = 412.0
+margin_bottom = 98.0
+alignment = 1
+
+[node name="connected clients" type="Label" parent="MarginContainer/Panel/admin view/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 182.0
+margin_right = 200.0
+margin_bottom = 38.0
+custom_fonts/font = ExtResource( 7 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Panel/admin view/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 204.0
+margin_right = 229.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 25, 25 )
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+
+[node name="menu" type="TextureRect" parent="MarginContainer/Panel/admin view/VBoxContainer/HBoxContainer"]
+margin_left = 520.0
+margin_right = 620.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+
+[node name="raised hands label" type="Label" parent="MarginContainer/Panel/admin view/VBoxContainer"]
+margin_top = 125.0
+margin_right = 620.0
+margin_bottom = 181.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 1 )
+text = "RAISED HANDS"
+valign = 1
+
+[node name="hand container" type="GridContainer" parent="MarginContainer/Panel/admin view/VBoxContainer"]
+margin_top = 206.0
+margin_right = 620.0
+margin_bottom = 206.0
+custom_constants/vseparation = 25
+custom_constants/hseparation = 25
+columns = 2
+
+[node name="mode" type="Label" parent="MarginContainer/Panel/admin view/VBoxContainer"]
+margin_top = 231.0
+margin_right = 620.0
+margin_bottom = 312.0
+custom_fonts/font = ExtResource( 8 )
+text = "MODE"
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/Panel/admin view/VBoxContainer"]
+margin_top = 337.0
+margin_right = 620.0
+margin_bottom = 445.0
+custom_fonts/font = ExtResource( 6 )
+tab_align = 0
+script = ExtResource( 3 )
+
+[node name="NORMAL" type="Tabs" parent="MarginContainer/Panel/admin view/VBoxContainer/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 56.0
+margin_right = -4.0
+margin_bottom = -4.0
+custom_fonts/font = ExtResource( 6 )
+
+[node name="DISCUSS" type="Tabs" parent="MarginContainer/Panel/admin view/VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 56.0
+margin_right = -4.0
+margin_bottom = -4.0
+custom_fonts/font = ExtResource( 6 )
+
+[node name="POLL" type="Tabs" parent="MarginContainer/Panel/admin view/VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="QUIZ" type="Tabs" parent="MarginContainer/Panel/admin view/VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0

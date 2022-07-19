@@ -1,0 +1,23 @@
+[gd_resource type="Theme" load_steps=5 format=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.615686, 0.992157, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.615686, 0.992157, 1, 1 )
+
+[sub_resource type="StyleBoxLine" id=2]
+content_margin_right = 10.0
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 10
+vertical = true
+
+[resource]
+VScrollBar/styles/grabber = SubResource( 1 )
+VScrollBar/styles/grabber_highlight = SubResource( 4 )
+VScrollBar/styles/grabber_pressed = SubResource( 3 )
+VScrollBar/styles/scroll = SubResource( 2 )
