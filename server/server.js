@@ -1,5 +1,9 @@
 import { WebSocketServer } from "ws";
 import { v4 as uuidv4 } from 'uuid';
+import express from "express";
+import http from 'http'
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
 const wss = new WebSocketServer({port: 3000})
 
@@ -207,3 +211,16 @@ wss.on('connection', ws => {
 
     });
 })
+
+// Express //
+// Serves up the HTML5 Export // 
+const HTTP_PORT = 2000 // Port for Express
+var app = express(); 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+var serv = http.Server(app);
+app.get('/',function(req,res) {
+	 res.sendFile(__dirname + '/client/index.html'); // serve index.html file
+ });
+app.use('/',express.static(__dirname + '/client')); // serve files from "client" directory on server root
+serv.listen(HTTP_PORT); // express listen for clients
